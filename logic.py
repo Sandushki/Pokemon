@@ -2,7 +2,6 @@ import aiohttp  # Eşzamansız HTTP istekleri için bir kütüphane
 import random
 import asyncio
 from datetime import datetime, timedelta
-import time
 
 class Pokemon:
     pokemons = {}
@@ -153,7 +152,7 @@ if __name__ == "__main__":
         print(await trainer2 .damage(trainer1))
         print("------------------")
         print(await trainer1.feed())
-        time.sleep(21)
+        asyncio.sleep(21)
         print(await trainer1.feed())
 
     asyncio.run(a())
