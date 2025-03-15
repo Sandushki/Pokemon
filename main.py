@@ -63,6 +63,15 @@ async def attack(ctx, target):
         "Rakibinizin veya kendinizin bir Pokemon'u yok."
 
 @bot.command()
+async def feed(ctx):
+    author = ctx.author.name
+    if author in Pokemon.pokemons:
+        pokemon = Pokemon.pokemons[author]
+        await ctx.send(await pokemon.feed())
+        #await ctx.send(await pokemon.show_img())
+    else:
+          await ctx.send("Pokemonunuz yok.")
+
 
 # Botun çalıştırılması
 bot.run(token)
