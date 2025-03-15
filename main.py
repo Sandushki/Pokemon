@@ -52,6 +52,7 @@ async def info(ctx):
     else:
           await ctx.send("Pokemonunuz yok.")
 
+@bot.command()
 async def attack(ctx, target):
     author = ctx.author.name
     if target in Pokemon.pokemons and author in Pokemon.pokemons:
@@ -60,6 +61,8 @@ async def attack(ctx, target):
         await ctx.send(await pokemon.damage(enemy))  
     else:
         "Rakibinizin veya kendinizin bir Pokemon'u yok."
+
+@bot.command()
 
 # Botun çalıştırılması
 bot.run(token)
